@@ -7,7 +7,7 @@ const firebaseConfig = {
   apiKey: "AIzaSyBmHXzrsTO7zw86xZACLw410lI4mBLu0SA",
   authDomain: "rifanumbers.firebaseapp.com",
   projectId: "rifanumbers",
-  storageBucket: "rifanumbers.firebasestorage.app",
+  storageBucket: "rifanumbers.appspot.com",
   messagingSenderId: "707426927800",
   appId: "1:707426927800:web:dc7a73c28a7d9c5a38a04d",
   measurementId: "G-DN75GCFBN8"
