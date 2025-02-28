@@ -4,12 +4,13 @@ import { getFirestore, collection, getDocs, addDoc, deleteDoc, doc, onSnapshot }
 import { toast } from "react-hot-toast";
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyBmHXzrsTO7zw86xZACLw410lI4mBLu0SA",
+  authDomain: "rifanumbers.firebaseapp.com",
+  projectId: "rifanumbers",
+  storageBucket: "rifanumbers.firebasestorage.app",
+  messagingSenderId: "707426927800",
+  appId: "1:707426927800:web:dc7a73c28a7d9c5a38a04d",
+  measurementId: "G-DN75GCFBN8"
 };
 
 const app = initializeApp(firebaseConfig);
