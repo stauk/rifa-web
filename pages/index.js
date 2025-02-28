@@ -59,22 +59,25 @@ export default function RifaApp() {
   };
 
   return (
-    <div className="p-4 max-w-md mx-auto">
+    <div className="p-4 max-w-3xl mx-auto">
       <h1 className="text-xl font-bold text-center mb-4">Gestión de Rifa</h1>
-      <input 
-        placeholder="Nombre del comprador"
-        value={seller}
-        onChange={(e) => setSeller(e.target.value)}
-      />
+      <div className="mb-4">
+        <input 
+          placeholder="Nombre del comprador"
+          value={seller}
+          onChange={(e) => setSeller(e.target.value)}
+          className="border p-2 w-full"
+        />
+      </div>
       <div className="grid grid-cols-10 gap-2 mt-6">
         {numbers.map((num) => (
           <div 
             key={num.number} 
-            className={num.sold ? "bg-red-300 cursor-pointer" : "bg-green-300 cursor-pointer"} 
+            className={num.sold ? "bg-red-300 cursor-pointer p-4 text-center font-bold" : "bg-green-300 cursor-pointer p-4 text-center font-bold"} 
             onClick={() => !num.sold ? sellNumber(num.number) : removeNumber(num.id, num.number)}
           >
-            <p className="text-center">{num.number}</p>
-            {num.sold && <p className="text-xs">Vendido a {num.seller}</p>}
+            {num.number}
+            {num.sold && <p className="text-xs mt-1">Vendido a {num.seller}</p>}
           </div>
         ))}
       </div>
