@@ -59,27 +59,35 @@ export default function RifaApp() {
   };
 
   return (
-    <div className="p-4 max-w-3xl mx-auto">
-      <h1 className="text-xl font-bold text-center mb-4">Gestión de Rifa</h1>
-      <div className="mb-4">
+    <div className="p-6 max-w-4xl mx-auto bg-gray-100 rounded-lg shadow-lg">
+      <h1 className="text-2xl font-bold text-center mb-6">Gestión de Rifa</h1>
+      <div className="mb-4 flex gap-2">
         <input 
           placeholder="Nombre del comprador"
           value={seller}
           onChange={(e) => setSeller(e.target.value)}
-          className="border p-2 w-full"
+          className="w-full p-2 border rounded"
         />
       </div>
-      <div className="grid grid-cols-10 gap-2 mt-6">
+      <div className="grid grid-cols-10 gap-2 mt-6 p-4 bg-white rounded-lg shadow">
         {numbers.map((num) => (
           <div 
             key={num.number} 
-            className={num.sold ? "bg-red-300 cursor-pointer p-4 text-center font-bold" : "bg-green-300 cursor-pointer p-4 text-center font-bold"} 
+            className={`cursor-pointer text-center p-4 font-bold rounded-lg shadow-lg transition-all ${num.sold ? "bg-red-500 text-white" : "bg-green-500 text-white hover:bg-green-600"}`} 
             onClick={() => !num.sold ? sellNumber(num.number) : removeNumber(num.id, num.number)}
           >
             {num.number}
-            {num.sold && <p className="text-xs mt-1">Vendido a {num.seller}</p>}
+            {num.sold && <p className="text-xs mt-1 font-semibold">Vendido a {num.seller}</p>}
           </div>
         ))}
+      </div>
+      <div className="mt-6 text-center">
+        <button 
+          className="bg-red-600 text-white p-2 rounded shadow-lg hover:bg-red-700"
+          onClick={() => numbers.filter(n => n.sold).forEach(n => removeNumber(n.id, n.number))}
+        >
+          Liberar todos los números vendidos
+        </button>
       </div>
     </div>
   );
