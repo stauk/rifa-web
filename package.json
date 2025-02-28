@@ -1,0 +1,16 @@
+{
+  "name": "rifa-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "firebase": "^9.0.0",
+    "react": "^18.0.0",
+    "next": "^12.0.0",
+    "react-hot-toast": "^2.0.0"
+  }
+}
